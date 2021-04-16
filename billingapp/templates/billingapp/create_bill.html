@@ -1,0 +1,21 @@
+{% extends "billingapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block extrahead %}
+{% endblock %}
+{% load bootstrap4 %}
+{% bootstrap_javascript jquery='full' %}
+{{ form.media }}
+{% block content %}
+    <h2 class="page-title">Create A Bill</h2>
+    <div class="content shadow-sm">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+            </div>
+                <button type="submit" class="btn btn-outline-theme">Create</button>
+        </form>
+    </div>
+{% endblock content %}

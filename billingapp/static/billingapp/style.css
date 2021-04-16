@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    min-height: 100vh;
+    position: relative;
+}
+
+main {
+    margin-top: 15px;
+    padding-bottom: 3rem;
+    color: #353535;
+}
+
+.navbar{
+    background-color: #284b63;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar a.navbar-brand, .navbar button.navbar-toggler , .navbar div#navbarNav .navbar-nav .nav-item .nav-link{
+    color: #ffffff;
+    padding: 15px 20px;
+}
+
+.navbar div#navbarNav .navbar-nav .nav-item.active .nav-link {
+    background-color: #ffffff;
+    color: #284b63;
+}
+
+.navbar div#navbarNav .navbar-nav .nav-item .nav-link:hover {
+    background-color: #f1f1f1;
+    color: #284b63;
+}
+
+.navbar a.navbar-brand {
+    font-size: 1.5em;
+    padding: 0 0;
+}
+
+h2.page-title {
+    margin: 35px auto 25px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #284b63;
+    padding: 10px 25px 12.5px;
+    width: max-content;
+    border-radius: 100px;
+    font-size: 1.5rem;
+}
+
+.content {
+    background-color: #ffffff;
+    padding: 20px 25px;
+    margin: 25px auto;
+    max-width: 600px;
+}
+
+.form-group .asteriskField {
+    margin-left: 5px;
+    color: red;
+}
+
+.btn-outline-theme {
+    border: 1px solid #3c6e71;
+    color: #3c6e71;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.btn-outline-theme:hover {
+    background-color: #3c6e71;
+    color: #ffffff;
+}
+
+.btn-theme {
+    background-color: #3c6e71;
+    color: #ffffff;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.btn-theme:hover {
+    border: 1px solid #3c6e71;
+    color: #3c6e71;
+}
+
+.profile.card {
+    max-width: 600px;
+    margin: 20px auto;
+    border: 2px solid #353535;
+    padding: 20px;
+}
+
+.profile.card .row img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.profile.card .profile-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0 0;
+    background-color: #284b63;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    height: 3rem;
+    width: 100%;
+}
+
+form.update-form {
+    margin: 25px 0 10px;
+}
+
+form.update-form br {
+    margin-bottom: 15px;
+}
+
+form.update-form input#id_image {
+    margin-top: 7.5px;
+}
+
+.row .card-wrapper {
+    padding: 15px;
+}
+
+#allBills {
+    margin-bottom: 15px;
+}
+
+.pages {
+    text-align: center;
+    margin: 50px auto 20px;
+}
+
+.invoice {
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 25px;
+}
+
+.invoice .card-title {
+    margin: 5px 0 25px;
+}
+
+.invoice .logo img {
+    height: 70px;
+    width: 80px;
+}
+
+.invoice .logo h2 {
+    font-size: 1.5em;
+}
+
+@media(max-width: 768px) {
+    .navbar {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .navbar div#navbarNav .navbar-nav .nav-item .nav-link {
+        font-size: 0.9em;
+        margin-left: 0;
+        padding: 10px 15px;
+    }
+
+    .navbar a.navbar-brand {
+        margin: 5px 15px;
+    }
+
+    .navbar-toggler-icon {
+        visibility: hidden;
+        margin: 5px 15px;
+    }
+
+    .navbar-toggler-icon svg {
+        visibility: visible;
+    }
+
+    .navbar-toggler {
+        border: 0;
+        outline: 0;
+    }
+
+    .navbar-toggler:hover {
+        opacity: 0.75;
+    }
+}
+
+@media print {
+    .noPrint {
+        display: none;
+    }
+}

@@ -1,0 +1,23 @@
+{% extends "billingapp/base.html" %}
+{% block content %}
+    <h2 class="page-title">About</h2>
+    <div class="jumbotron shadow">
+        <h1 class="display-4">Hello, {{ user.first_name }}!</h1>
+        <p class="lead">This project is developed by Umang Thadani,
+            a Second Year Information Technology Student.</p>
+        <hr class="my-4">
+        <p>Find out more about the creator: </p>
+        <a class="btn btn-primary"
+           target="_blank"
+           href="https://thadaniumang.github.io"
+           role="button">
+            Portfolio
+        </a>
+        <a class="btn btn-dark ml-2"
+           target="_blank"
+           href="#"
+           role="button">
+            Source Code
+        </a>
+    </div>
+{% endblock content %}

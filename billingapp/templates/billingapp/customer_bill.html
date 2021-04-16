@@ -1,0 +1,68 @@
+{% extends "billingapp/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container-fluid invoice shadow">
+        <div class="logo text-center mb-5">
+            <img src="https://i.imgur.com/jnQwhtB.jpg" alt="BillPay" class="mb-2">
+            <h2>Bill Pay</h2>
+        </div>
+        <hr>
+        <div class="row px-2">
+            <div class="col-6">
+                <address>
+                    <i>
+                        <b>Bill for:</b><br>
+                        {{ view.kwargs.customer_name }}<br>
+                    </i>
+                </address>
+            </div>
+            <div class="col-6 text-right">
+                <address>
+                    <i>
+                        <b>To Pay:</b><br>
+                        {{ user.first_name }} {{ user.last_name }},<br>
+                        {{ user.profile.shop_name }}
+                    </i>
+                </address>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                    <h3 class="card-title"><strong>Order summary</strong></h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td><strong>Product</strong></td>
+                                        <td class="thick-line"></td>
+                                        <td class="thick-line"></td>
+                                        <td class="text-right"><strong>Amount</strong></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for bill in bills.bills %}
+                                        <tr>
+                                            <td>{{ bill.product }}</td>
+                                            <td class="thick-line"></td>
+                                            <td class="thick-line"></td>
+                                            <td class="text-right">{{ bill.amount_due }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    <tr>
+                                        <td class="thick-line"></td>
+                                        <td class="thick-line"></td>
+                                        <td class="thick-line text-center"><strong>Total</strong></td>
+                                        <td class="thick-line text-right">{{ bills.sum.amount_due__sum }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button onclick="window.print();" class="noPrint btn btn-outline-theme mt-4">Print Bill</button>
+    </div>
+{% endblock content %}

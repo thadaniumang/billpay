@@ -1,0 +1,43 @@
+{% extends "billingapp/base.html" %}
+{% block content %}
+    <h2 class="page-title">Customers</h2>
+    <div class="row">
+        {% for bill in bills %}
+            <div class="card-wrapper col-md-6 col-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ bill.customer_name }}</h5>
+                        <a href="{% url 'site-invoice' bill.customer_name %}" class="card-link stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% if is_paginated %}
+
+            <div class="pages">
+                <div class="btn-group" role="group" aria-label="Pagination">
+
+                    {% if page_obj.has_previous %}
+                        <a class="btn btn-outline-theme" href="?page=1">First</a>
+                        <a class="btn btn-outline-theme" href="?page={{ page_obj.previous_page_number }}">Prev</a>
+                    {% endif %}
+
+                    {% for page in page_obj.paginator.page_range %}
+                        {% if page_obj.number == page %}
+                            <a class="btn btn-theme" href="?page={{ page }}">{{ page }}</a>
+                        {% elif page > page_obj.number|add:-3 and page < page_obj.number|add:3 %}
+                            <a class="btn btn-outline-theme" href="?page={{ page }}">{{ page }}</a>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                        <a class="btn btn-outline-theme" href="?page={{ page_obj.next_page_number }}">Next</a>
+                        <a class="btn btn-outline-theme" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                    {% endif %}
+
+                </div>
+            </div>
+
+        {% endif %}
+{% endblock content %}
